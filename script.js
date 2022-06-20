@@ -30,24 +30,32 @@ function computerPlay() {
 
 // Next step, write a function that plays a single round of rock paper scissors. The function should take 2 parameters - the playerSelection and computerSelection - and return a string that declares the winner of the round like so: "You lose! Paper beats Rock"
 
-function playRound(playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) {
+function playRound(playerSelectionLower, computerSelection) {
+    if (playerSelectionLower === computerSelection) {
         return "Tie game!";
-    } else if (playerSelection === "rock" && computerSelection === "paper") {
+    } else if (playerSelectionLower === "rock" && computerSelection === "paper") {
         return "You lose! Paper beats rock.";
-    } else if (playerSelection === "rock" && computerSelection === "scissors") {
+    } else if (playerSelectionLower === "rock" && computerSelection === "scissors") {
         return "You win! Rock beats scissors.";
-    } else if (playerSelection === "paper" && computerSelection === "rock") {
+    } else if (playerSelectionLower === "paper" && computerSelection === "rock") {
         return "You win! Paper beats rock.";
-    } else if (playerSelection === "paper" && computerSelection === "scissors") {
+    } else if (playerSelectionLower === "paper" && computerSelection === "scissors") {
         return "You lose! Scissors beat paper.";
-    } else if (playerSelection === "scissors" && computerSelection === "paper") {
+    } else if (playerSelectionLower === "scissors" && computerSelection === "paper") {
         return "You win! Scissors beat paper.";
-    } else if (playerSelection === "scissors" && computerSelection === "rock") {
+    } else if (playerSelectionLower === "scissors" && computerSelection === "rock") {
         return "You lose! Rock beats scissors.";
     };
 };
 
-let playerSelection = "rock";
+// Collect input from user and convert to lowercase. Copy the computerPlay() function to the computerSelection parameter so we can pass it to the playRound function.
+
+let playerSelection = prompt("Choose an option"); 
+let playerSelectionLower = playerSelection.toLowerCase();
+
 let computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+
+
+console.log(playRound(playerSelectionLower, computerSelection));
+
+
