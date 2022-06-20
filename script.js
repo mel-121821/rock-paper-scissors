@@ -17,4 +17,16 @@
 
 // Create a function called computerPlay() that will randomly return either rock, paper or scissors. Write another function that plays a single round of rock paper scissors, the function should take 2 parameters - the playerSelection and computerSelection - and then return a string that declares the winner of the round like so: "You lose! Paper beats Rock". the playerSelection parameter needs to be case insensitive. //
 
-console.log("Hello World")
+// The function is choosing between 3 different things, so we want an array of the options
+
+const options = ["rock", "paper", "scissors"];
+
+// we want to use a random function to select an option
+
+
+function computerPlay() {
+    optionSelected = options[Math.floor(Math.random()*options.length)];
+    console.log(optionSelected);
+}
+
+computerPlay();
