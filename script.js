@@ -12,3 +12,9 @@
 // If user picks paper and computer picks rock, print "You win" //
 // If user picks paper and computer picks scissors, print "You lose" //
 // If user picks scissors and computer picks paper, print "You win" //
+// If user picks scissors and computer picks rock, print "You win" //
+
+
+// Create a function called computerPlay() that will randomly return either rock, paper or scissors. Write another function that plays a single round of rock paper scissors, the function should take 2 parameters - the playerSelection and computerSelection - and then return a string that declares the winner of the round like so: "You lose! Paper beats Rock". the playerSelection parameter needs to be case insensitive. //
+
+console.log("Hello World")
