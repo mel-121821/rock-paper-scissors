@@ -26,7 +26,24 @@ const options = ["rock", "paper", "scissors"];
 
 function computerPlay() {
     return options[Math.floor(Math.random()*options.length)];
-    
 }
 
-computerPlay();
+// Next step, write a function that plays a single round of rock paper scissors. The function should take 2 parameters - the playerSelection and computerSelection - and return a string that declares the winner of the round like so: "You lose! Paper beats Rock"
+
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
+        alert("Tie game!");
+    } else if (playerSelection === rock && computerSelection === paper) {
+        alert("You lose! Paper beats rock.");
+    } else if (playerSelection === rock && computerSelection === scissors) {
+        alert("You win! Rock beats scissors.");
+    } else if (playerSelection === paper && computerSelection === rock) {
+        alert("You win! Paper beats rock.");
+    } else if (playerSelection === paper && computerSelection === scissors) {
+        alert("You lose! Scissors beat paper.");
+    } else if (playerSelection === scissors && computerSelection === paper) {
+        alert("You win! Scissors beat paper.");
+    } else if (playerSelection === scissors && computerSelection === rock) {
+        alert("You lose! Rock beats scissors.");
+    };
+};
