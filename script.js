@@ -58,4 +58,15 @@ let computerSelection = computerPlay();
 
 console.log(playRound(playerSelectionLower, computerSelection));
 
+// Next step, create a new function called game(). Call the playRound function inside of this one to play a 5 round game that keeps score and reports a winner or loser in the end
 
+// Create a counter that counts the number of rounds up to 5 and then ends the game. Create a function that counts the number of wins by the user. If the number of wins is greater than the number of losses, the user wins, else the user loses
+
+function getScore(playRound) 
+
+
+function game(playRound) {
+    for (let i = 0; i < 5; i++) {
+
+    }
+}
