@@ -32,19 +32,26 @@ function computerPlay() {
 
 function playRound(playerSelectionLower, computerSelection) {
     if (playerSelectionLower === computerSelection) {
-        return "Tie game!";
+        let score = "tie"
+        console.log("Tie game!");
     } else if (playerSelectionLower === "rock" && computerSelection === "paper") {
-        return "You lose! Paper beats rock.";
+        let score = "lose"
+        console.log("You lose! Paper beats rock.");
     } else if (playerSelectionLower === "rock" && computerSelection === "scissors") {
-        return "You win! Rock beats scissors.";
+        let score = "win"
+        console.log("You win! Rock beats scissors.");
     } else if (playerSelectionLower === "paper" && computerSelection === "rock") {
-        return "You win! Paper beats rock.";
+        let score = "win"
+        console.log("You win! Paper beats rock.");
     } else if (playerSelectionLower === "paper" && computerSelection === "scissors") {
-        return "You lose! Scissors beat paper.";
+        let score = "lose"
+        console.log("You lose! Scissors beats paper.");
     } else if (playerSelectionLower === "scissors" && computerSelection === "paper") {
-        return "You win! Scissors beat paper.";
+        let score = "win"
+        console.log("You win! Scissors beats paper.");
     } else if (playerSelectionLower === "scissors" && computerSelection === "rock") {
-        return "You lose! Rock beats scissors.";
+        let score = "lose"
+        console.log("You lose! Rock beats scissors.");
     };
 };
 
@@ -62,11 +69,11 @@ console.log(playRound(playerSelectionLower, computerSelection));
 
 // Create a counter that counts the number of rounds up to 5 and then ends the game. Create a function that counts the number of wins by the user. If the number of wins is greater than the number of losses, the user wins, else the user loses
 
-function getScore(playRound) 
+// function getScore(playRound) 
 
 
-function game(playRound) {
-    for (let i = 0; i < 5; i++) {
+//function game(playRound) {
+   // for (let i = 0; i < 5; i++) {
 
-    }
-}
+    //}
+//}
