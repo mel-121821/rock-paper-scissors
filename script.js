@@ -30,30 +30,29 @@ function computerPlay() {
 
 // Next step, write a function that plays a single round of rock paper scissors. The function should take 2 parameters - the playerSelection and computerSelection - and return a string that declares the winner of the round like so: "You lose! Paper beats Rock"
 
+let wins = 0
+
 function playRound(playerSelectionLower, computerSelection) {
     if (playerSelectionLower === computerSelection) {
-        let score = "tie"
         console.log("Tie game!");
     } else if (playerSelectionLower === "rock" && computerSelection === "paper") {
-        let score = "lose"
         console.log("You lose! Paper beats rock.");
     } else if (playerSelectionLower === "rock" && computerSelection === "scissors") {
-        let score = "win"
+        ++wins;
         console.log("You win! Rock beats scissors.");
     } else if (playerSelectionLower === "paper" && computerSelection === "rock") {
-        let score = "win"
+        ++wins;
         console.log("You win! Paper beats rock.");
     } else if (playerSelectionLower === "paper" && computerSelection === "scissors") {
-        let score = "lose"
         console.log("You lose! Scissors beats paper.");
     } else if (playerSelectionLower === "scissors" && computerSelection === "paper") {
-        let score = "win"
+        ++wins;
         console.log("You win! Scissors beats paper.");
     } else if (playerSelectionLower === "scissors" && computerSelection === "rock") {
-        let score = "lose"
         console.log("You lose! Rock beats scissors.");
     };
 };
+
 
 // Collect input from user and convert to lowercase. Copy the computerPlay() function to the computerSelection parameter so we can pass it to the playRound function.
 
@@ -64,6 +63,8 @@ let computerSelection = computerPlay();
 
 
 console.log(playRound(playerSelectionLower, computerSelection));
+
+console.log(wins);
 
 // Next step, create a new function called game(). Call the playRound function inside of this one to play a 5 round game that keeps score and reports a winner or loser in the end
 
