@@ -32,23 +32,23 @@ function computerPlay() {
 
 let wins = 0
 
-function playRound(playerSelectionLower, computerSelection) {
-    if (playerSelectionLower === computerSelection) {
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
         console.log("Tie game!");
-    } else if (playerSelectionLower === "rock" && computerSelection === "paper") {
+    } else if (playerSelection === "rock" && computerSelection === "paper") {
         console.log("You lose! Paper beats rock.");
-    } else if (playerSelectionLower === "rock" && computerSelection === "scissors") {
+    } else if (playerSelection === "rock" && computerSelection === "scissors") {
         ++wins;
         console.log("You win! Rock beats scissors.");
-    } else if (playerSelectionLower === "paper" && computerSelection === "rock") {
+    } else if (playerSelection === "paper" && computerSelection === "rock") {
         ++wins;
         console.log("You win! Paper beats rock.");
-    } else if (playerSelectionLower === "paper" && computerSelection === "scissors") {
+    } else if (playerSelection === "paper" && computerSelection === "scissors") {
         console.log("You lose! Scissors beats paper.");
-    } else if (playerSelectionLower === "scissors" && computerSelection === "paper") {
+    } else if (playerSelection === "scissors" && computerSelection === "paper") {
         ++wins;
         console.log("You win! Scissors beats paper.");
-    } else if (playerSelectionLower === "scissors" && computerSelection === "rock") {
+    } else if (playerSelection === "scissors" && computerSelection === "rock") {
         console.log("You lose! Rock beats scissors.");
     };
 };
@@ -56,13 +56,13 @@ function playRound(playerSelectionLower, computerSelection) {
 
 // Collect input from user and convert to lowercase. Copy the computerPlay() function to the computerSelection parameter so we can pass it to the playRound function.
 
-let playerSelection = prompt("Choose an option"); 
-let playerSelectionLower = playerSelection.toLowerCase();
+let playerSelection = prompt("Choose an option").toLowerCase(); 
 
 let computerSelection = computerPlay();
 
 
-console.log(playRound(playerSelectionLower, computerSelection));
+console.log(playRound(playerSelection, computerSelection));
+
 
 console.log(wins);
 
