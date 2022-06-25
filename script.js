@@ -31,11 +31,13 @@ function computerPlay() {
 // Next step, write a function that plays a single round of rock paper scissors. The function should take 2 parameters - the playerSelection and computerSelection - and return a string that declares the winner of the round like so: "You lose! Paper beats Rock"
 
 let wins = 0
+let losses = 0
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         console.log("Tie game!");
     } else if (playerSelection === "rock" && computerSelection === "paper") {
+        ++losses;
         console.log("You lose! Paper beats rock.");
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
         ++wins;
@@ -44,11 +46,13 @@ function playRound(playerSelection, computerSelection) {
         ++wins;
         console.log("You win! Paper beats rock.");
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
+        ++losses;
         console.log("You lose! Scissors beats paper.");
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
         ++wins;
         console.log("You win! Scissors beats paper.");
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
+        ++losses;
         console.log("You lose! Rock beats scissors.");
     };
 };
@@ -61,20 +65,30 @@ let playerSelection = prompt("Choose an option").toLowerCase();
 let computerSelection = computerPlay();
 
 
-console.log(playRound(playerSelection, computerSelection));
+
 
 
 console.log(wins);
 
 // Next step, create a new function called game(). Call the playRound function inside of this one to play a 5 round game that keeps score and reports a winner or loser in the end
 
-// Create a counter that counts the number of rounds up to 5 and then ends the game. Create a function that counts the number of wins by the user. If the number of wins is greater than the number of losses, the user wins, else the user loses
+// Create a counter that counts the number of rounds up to 5 and then ends the game. Create a function that counts the number of wins by the user(Added this to playRound()). If the number of wins is greater than the number of losses, the user wins, if losses is higher, the user loses if equal, it's a tie. Have the function prompt the user with each loop iteration and stop prompts after 5 rounds
 
-// function getScore(playRound) 
+function game(playRound) {
+    for (let i = 0; i < 5; i++) {
+        if (i < 5) {
+            playerSelection = prompt("Choose an option").toLowerCase();prompt()
+            if (wins > losses) {
+                console.log("Congrats! You've won this round! :)");
+            } else if (wins < losses) {
+                console.log("Sorry, you've lost this round :(");
+            } else {
+                console.log("It's a tie!")
+            }
+        } else {
+            console.log("End of round.")
+        }
+    }
+}
 
-
-//function game(playRound) {
-   // for (let i = 0; i < 5; i++) {
-
-    //}
-//}
+console.log(game(playRound(playerSelection, computerSelection)));
