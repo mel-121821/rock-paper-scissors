@@ -33,25 +33,25 @@ function computerPlay() {
 let wins = 0
 let losses = 0
 
-function playRound(playerSelectionLower, computerSelection) {
-    if (playerSelectionLower === computerSelection) {
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
         console.log("Tie game!");
-    } else if (playerSelectionLower === "rock" && computerSelection === "paper") {
+    } else if (playerSelection === "rock" && computerSelection === "paper") {
         ++losses;
         console.log("You lose! Paper beats rock.");
-    } else if (playerSelectionLower === "rock" && computerSelection === "scissors") {
+    } else if (playerSelection === "rock" && computerSelection === "scissors") {
         ++wins;
         console.log("You win! Rock beats scissors.");
-    } else if (playerSelectionLower === "paper" && computerSelection === "rock") {
+    } else if (playerSelection === "paper" && computerSelection === "rock") {
         ++wins;
         console.log("You win! Paper beats rock.");
-    } else if (playerSelectionLower === "paper" && computerSelection === "scissors") {
+    } else if (playerSelection === "paper" && computerSelection === "scissors") {
         ++losses;
         console.log("You lose! Scissors beats paper.");
-    } else if (playerSelectionLower === "scissors" && computerSelection === "paper") {
+    } else if (playerSelection === "scissors" && computerSelection === "paper") {
         ++wins;
         console.log("You win! Scissors beats paper.");
-    } else if (playerSelectionLower === "scissors" && computerSelection === "rock") {
+    } else if (playerSelection === "scissors" && computerSelection === "rock") {
         ++losses;
         console.log("You lose! Rock beats scissors.");
     };
@@ -60,9 +60,15 @@ function playRound(playerSelectionLower, computerSelection) {
 
 // Collect input from user and convert to lowercase. Copy the computerPlay() function to the computerSelection parameter so we can pass it to the playRound function.
 
-let playerSelection = prompt("Choose an option");
-let playerSelectionLower = playerSelection.toLowerCase(); 
 
+//let playerSelection = prompt("Choose an option")
+//let playerSelectionLower = playerSelection.toLowerCase(); 
+
+function playerSelection() {
+    prompt("Choose an option").toLowerCase;
+}
+
+playerSelection();
 
 let computerSelection = computerPlay();
 
@@ -74,7 +80,7 @@ console.log(wins);
 
 // Next step, create a new function called game(). Call the playRound function inside of this one to play a 5 round game that keeps score and reports a winner or loser in the end
 
-// Create a counter that counts the number of rounds up to 5 and then ends the game. Create a function that counts the number of wins by the user(Added this to playRound()). If the number of wins is greater than the number of losses, the user wins, if losses is higher, the user loses if equal, it's a tie. Have the function prompt the user with each loop iteration and stop prompts after 5 rounds
+// Create a counter that counts the number of rounds up to 5 and then ends the game. Create a function that counts the number of wins by the user(Added this to playRound()). If the number of wins is greater than the number of losses, the user wins, if losses is higher, the user loseprompt("Choose an option")s if equal, it's a tie. Have the function prompt the user with each loop iteration and stop prompts after 5 rounds
 
 let numberOfRounds = 0;
 
@@ -95,4 +101,6 @@ function game(playRound) {
     }
 }
 
-console.log(game(playRound(playerSelectionLower, computerSelection)));
+console.log(numberOfRounds);
+
+console.log(game(playRound(playerSelection, computerSelection)));
