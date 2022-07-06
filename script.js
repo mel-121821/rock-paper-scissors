@@ -61,19 +61,27 @@ function playRound(playerSelection, computerSelection) {
 // Collect input from user and convert to lowercase. Copy the computerPlay() function to the computerSelection parameter so we can pass it to the playRound function.
 
 
-//let playerSelection = prompt("Choose an option")
-//let playerSelectionLower = playerSelection.toLowerCase(); 
+// Create a function that takes an input from the user and converts it to lowercase, assign the adjusted input to a variable
 
-function playerSelection() {
-    prompt("Choose an option").toLowerCase;
+//let userPrompt = prompt("Choose an option")
+//let playerSelection = userPrompt.toLowerCase(); 
+
+let playerSelection;
+
+function userPrompt() {
+    let playerSelection = prompt("Choose an option").toLowerCase();
 }
 
-playerSelection();
+userPrompt();
+
+console.log(playerSelection);
+
+
 
 let computerSelection = computerPlay();
 
 
-
+console.log(playRound(playerSelection, computerSelection));
 
 
 console.log(wins);
@@ -88,9 +96,9 @@ function game(playRound) {
     for (let i = 0; i < 5; i++) {
         numberOfRounds++;
         if (i < 5) {
-            if (wins > 3) {
+            if (numberOfRounds === 5 && wins > losses) {
                 console.log("Congrats! You've won this round! :)");
-            } else if (losses > 3) {
+            } else if (numberOfRounds === 5 && losses > wins) {
                 console.log("Sorry, you've lost this round :(");
             } else {
                 console.log("It's a tie!")
@@ -103,4 +111,4 @@ function game(playRound) {
 
 console.log(numberOfRounds);
 
-console.log(game(playRound(playerSelection, computerSelection)));
+//console.log(game(playRound(playerSelection, computerSelection)));
