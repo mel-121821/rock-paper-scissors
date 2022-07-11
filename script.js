@@ -54,7 +54,11 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
         ++losses;
         console.log("You lose! Rock beats scissors.");
-    };
+    } else if (playerSelection !== "rock" || playerSelection !== "paper" || playerSelection !== "paper") {
+        console.log("Sorry, this is not a valid input. Please try again.");
+    } else {
+        console.log("What happened?")
+    }
 };
 
 
@@ -63,23 +67,23 @@ function playRound(playerSelection, computerSelection) {
 
 // Create a function that takes an input from the user and converts it to lowercase, assign the adjusted input to a variable
 
-//let userPrompt = prompt("Choose an option")
-//let playerSelection = userPrompt.toLowerCase(); 
+let userPrompt = prompt("Choose an option")
+let playerSelection = userPrompt.toLowerCase(); 
 
-let playerSelection;
+//let playerSelection = prompt("Choose an option")
 
-function userPrompt() {
-    let playerSelection = prompt("Choose an option").toLowerCase();
-}
+//function userPrompt() {
+    //let playerSelection = (prompt("Choose an option").toLowerCase());
+    //console.log(playerSelection);
+//}
 
-userPrompt();
-
-console.log(playerSelection);
-
+//userPrompt();
 
 
 let computerSelection = computerPlay();
 
+console.log(playerSelection);
+console.log(computerSelection);
 
 console.log(playRound(playerSelection, computerSelection));
 
