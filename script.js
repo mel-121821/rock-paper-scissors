@@ -28,33 +28,40 @@ function computerPlay() {
     return options[Math.floor(Math.random()*options.length)];
 }
 
+let computerSelection = computerPlay();
+
+console.log(computerSelection);
+
 // Next step, write a function that plays a single round of rock paper scissors. The function should take 2 parameters - the playerSelection and computerSelection - and return a string that declares the winner of the round like so: "You lose! Paper beats Rock"
 
 let wins = 0
 let losses = 0
 
-function playRound(playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) {
+function playRound(playerSelection = prompt("Choose an option"), computerSelection) {
+console.log(playerSelection);
+console.log(computerSelection);
+
+    if (playerSelection.toLowerCase() === computerSelection) {
         console.log("Tie game!");
-    } else if (playerSelection === "rock" && computerSelection === "paper") {
+    } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "paper") {
         ++losses;
         console.log("You lose! Paper beats rock.");
-    } else if (playerSelection === "rock" && computerSelection === "scissors") {
+    } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") {
         ++wins;
         console.log("You win! Rock beats scissors.");
-    } else if (playerSelection === "paper" && computerSelection === "rock") {
+    } else if (playerSelection.toLowerCase() === "paper" && computerSelection === "rock") {
         ++wins;
         console.log("You win! Paper beats rock.");
-    } else if (playerSelection === "paper" && computerSelection === "scissors") {
+    } else if (playerSelection.toLowerCase() === "paper" && computerSelection === "scissors") {
         ++losses;
         console.log("You lose! Scissors beats paper.");
-    } else if (playerSelection === "scissors" && computerSelection === "paper") {
+    } else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper") {
         ++wins;
         console.log("You win! Scissors beats paper.");
-    } else if (playerSelection === "scissors" && computerSelection === "rock") {
+    } else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "rock") {
         ++losses;
         console.log("You lose! Rock beats scissors.");
-    } else if (playerSelection !== "rock" || playerSelection !== "paper" || playerSelection !== "paper") {
+    } else if (playerSelection.toLowerCase() !== "rock" || playerSelection.toLowerCase() !== "paper" || playerSelection.toLowerCase() !== "paper") {
         console.log("Sorry, this is not a valid input. Please try again.");
     } else {
         console.log("What happened?")
@@ -62,13 +69,15 @@ function playRound(playerSelection, computerSelection) {
 };
 
 
+
+console.log(playRound())
 // Collect input from user and convert to lowercase. Copy the computerPlay() function to the computerSelection parameter so we can pass it to the playRound function.
 
 
 // Create a function that takes an input from the user and converts it to lowercase, assign the adjusted input to a variable
 
-let userPrompt = prompt("Choose an option")
-let playerSelection = userPrompt.toLowerCase(); 
+//let userPrompt = prompt("Choose an option")
+//let playerSelection = userPrompt.toLowerCase(); 
 
 //let playerSelection = prompt("Choose an option")
 
@@ -80,12 +89,12 @@ let playerSelection = userPrompt.toLowerCase();
 //userPrompt();
 
 
-let computerSelection = computerPlay();
 
-console.log(playerSelection);
-console.log(computerSelection);
 
-console.log(playRound(playerSelection, computerSelection));
+//console.log(playerSelection);
+//console.log(computerSelection);
+
+//console.log(playRound(playerSelection, computerSelection));
 
 
 console.log(wins);
