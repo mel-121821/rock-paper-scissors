@@ -23,12 +23,13 @@ const options = ["rock", "paper", "scissors"];
 
 // we want to use a random function to select an option. Math.random picks a random number between 0 and 1 (arrays start from 0, so the above array will be numbered as so: [0, 1, 2]), we want to multiply that by the length of the array (options.length) and then use Math.floor to round the decimal down to a whole number
 
+let computerSelection;
 
-function computerPlay() {
-    return options[Math.floor(Math.random()*options.length)];
+function computerPlay(options) {
+    return computerSelection = options[Math.floor(Math.random()*options.length)];
 }
 
-let computerSelection = computerPlay();
+//let computerSelection = computerPlay();
 
 console.log(computerPlay());
 console.log(computerSelection);
