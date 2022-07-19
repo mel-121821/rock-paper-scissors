@@ -30,6 +30,7 @@ function computerPlay() {
 
 let computerSelection = computerPlay();
 
+console.log(computerPlay());
 console.log(computerSelection);
 
 // Next step, write a function that plays a single round of rock paper scissors. The function should take 2 parameters - the playerSelection and computerSelection - and return a string that declares the winner of the round like so: "You lose! Paper beats Rock"
