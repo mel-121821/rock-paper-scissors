@@ -35,6 +35,8 @@ function computerPlay() {
 console.log(computerPlay());
 console.log(computerSelection);
 
+// computerPlay() and computerSelection now match every round (were previously returning different values)
+
 // Next step, write a function that plays a single round of rock paper scissors. The function should take 2 parameters - the playerSelection and computerSelection - and return a string that declares the winner of the round like so: "You lose! Paper beats Rock"
 
 let wins = 0
