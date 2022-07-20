@@ -25,9 +25,10 @@ const options = ["rock", "paper", "scissors"];
 
 let computerSelection;
 
-function computerPlay(options) {
+function computerPlay() {
     return computerSelection = options[Math.floor(Math.random()*options.length)];
 }
+
 
 //let computerSelection = computerPlay();
 
