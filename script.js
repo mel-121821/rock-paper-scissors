@@ -39,10 +39,13 @@ console.log(computerSelection);
 
 // Next step, write a function that plays a single round of rock paper scissors. The function should take 2 parameters - the playerSelection and computerSelection - and return a string that declares the winner of the round like so: "You lose! Paper beats Rock"
 
+let playerSelection = prompt("Choose an option");
+console.log(playerSelection);
+
 let wins = 0
 let losses = 0
 
-function playRound(playerSelection = prompt("Choose an option"), computerSelection) {
+function playRound() {
 console.log(playerSelection);
 console.log(computerSelection);
 
@@ -73,9 +76,8 @@ console.log(computerSelection);
     }
 };
 
+playRound(playerSelection, computerSelection);
 
-
-console.log(playRound())
 // Collect input from user and convert to lowercase. Copy the computerPlay() function to the computerSelection parameter so we can pass it to the playRound function.
 
 
