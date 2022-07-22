@@ -85,10 +85,10 @@ function playRound() {
         //return "You lose! Rock beats scissors.";
         console.log("You lose! Rock beats scissors.");
     } else if (playerSelection.toLowerCase() !== "rock" || playerSelection.toLowerCase() !== "paper" || playerSelection.toLowerCase() !== "paper") {
-        return "Sorry, this is not a valid input. Please try again.";
+        //return "Sorry, this is not a valid input. Please try again.";
         console.log("Sorry, this is not a valid input. Please try again.");
     } else {
-        return "What happened?"
+        //return "What happened?"
         console.log("What happened?");
     }
 };
