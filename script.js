@@ -146,7 +146,7 @@ function game() {
 }
 
 game();
-console.log(numberOfRounds);
+//console.log(numberOfRounds);
 
 
 //console.log(game(playRound(playerSelection, computerSelection)));
