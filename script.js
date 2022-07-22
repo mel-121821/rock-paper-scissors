@@ -32,22 +32,22 @@ function computerPlay() {
 
 //let computerSelection = computerPlay();
 
-console.log(computerPlay());
-console.log(computerSelection);
+//console.log(computerPlay());
+//console.log(computerSelection);
 
 // computerPlay() and computerSelection now match every round (were previously returning different values)
 
 // Next step, write a function that plays a single round of rock paper scissors. The function should take 2 parameters - the playerSelection and computerSelection - and return a string that declares the winner of the round like so: "You lose! Paper beats Rock"
 
 let playerSelection = prompt("Choose an option");
-console.log(playerSelection);
+//console.log(playerSelection);
 
 let wins = 0
 let losses = 0
 
 function playRound() {
-console.log(playerSelection);
-console.log(computerSelection);
+//console.log(playerSelection);
+//console.log(computerSelection);
 
     if (playerSelection.toLowerCase() === computerSelection) {
         console.log("Tie game!");
@@ -76,7 +76,7 @@ console.log(computerSelection);
     }
 };
 
-playRound(playerSelection, computerSelection);
+//playRound(playerSelection, computerSelection);
 
 // Collect input from user and convert to lowercase. Copy the computerPlay() function to the computerSelection parameter so we can pass it to the playRound function.
 
@@ -96,15 +96,7 @@ playRound(playerSelection, computerSelection);
 //userPrompt();
 
 
-
-
-//console.log(playerSelection);
-//console.log(computerSelection);
-
-//console.log(playRound(playerSelection, computerSelection));
-
-
-console.log(wins);
+//console.log(wins);
 
 // Next step, create a new function called game(). Call the playRound function inside of this one to play a 5 round game that keeps score and reports a winner or loser in the end
 
@@ -112,23 +104,41 @@ console.log(wins);
 
 let numberOfRounds = 0;
 
-function game(playRound) {
+function game() {
+
     for (let i = 0; i < 5; i++) {
-        numberOfRounds++;
+        ++numberOfRounds;
+
         if (i < 5) {
-            if (numberOfRounds === 5 && wins > losses) {
+            //computerPlay();
+            let playerSelection = prompt("Choose an option")
+
+            console.log(playerSelection);
+            //console.log(computerSelection);
+            console.log(computerPlay());
+
+            playRound(playerSelection, computerSelection);
+
+            console.log(`Wins = ${wins}`);
+            console.log(`Losses = ${losses}`);
+
+        } else {
+            console.log("Game over")
+        }
+
+        
+            if (numberOfRounds === 4 && wins > losses) {
                 console.log("Congrats! You've won this round! :)");
-            } else if (numberOfRounds === 5 && losses > wins) {
+            } else if (numberOfRounds === 4 && losses > wins) {
                 console.log("Sorry, you've lost this round :(");
-            } else {
+            } else if (numberOfRounds === 4 && losses === wins) {
                 console.log("It's a tie!")
             }
-        } else {
-            console.log("End of round.")
-        }
     }
 }
 
+game();
 console.log(numberOfRounds);
+
 
 //console.log(game(playRound(playerSelection, computerSelection)));
