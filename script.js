@@ -39,13 +39,21 @@ function computerPlay() {
 
 // Next step, write a function that plays a single round of rock paper scissors. The function should take 2 parameters - the playerSelection and computerSelection - and return a string that declares the winner of the round like so: "You lose! Paper beats Rock"
 
-let playerSelection = prompt("Choose an option");
+//let playerSelection;
+
+function getPlayerSelection() {
+    return playerSelection = prompt("Choose an option");
+}
+
+//let playerSelection;
 //console.log(playerSelection);
 
 let wins = 0
 let losses = 0
 
 function playRound() {
+
+    //let playerSelection = prompt("Choose an option");
 //console.log(playerSelection);
 //console.log(computerSelection);
 
@@ -111,8 +119,8 @@ function game() {
 
         if (i < 5) {
             //computerPlay();
-            let playerSelection = prompt("Choose an option")
-
+            //let playerSelection = prompt("Choose an option")
+            getPlayerSelection();
             console.log(playerSelection);
             //console.log(computerSelection);
             console.log(computerPlay());
@@ -120,20 +128,20 @@ function game() {
             playRound(playerSelection, computerSelection);
 
             console.log(`Wins = ${wins}`);
-            console.log(`Losses = ${losses}`);
+            console.log(`Losses = ${losses}`); 
+
+        
+                if (numberOfRounds === 5 && wins > losses) {
+                    console.log("Congrats! You've won this round! :)");
+                } else if (numberOfRounds === 5 && losses > wins) {
+                    console.log("Sorry, you've lost this round :(");
+                } else if (numberOfRounds === 5 && losses === wins) {
+                    console.log("It's a tie!")
+                }  
 
         } else {
             console.log("Game over")
         }
-
-        
-            if (numberOfRounds === 4 && wins > losses) {
-                console.log("Congrats! You've won this round! :)");
-            } else if (numberOfRounds === 4 && losses > wins) {
-                console.log("Sorry, you've lost this round :(");
-            } else if (numberOfRounds === 4 && losses === wins) {
-                console.log("It's a tie!")
-            }
     }
 }
 
