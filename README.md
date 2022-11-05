@@ -3,15 +3,12 @@ My Rock Paper Scissors Project
 Initial Startup Qs:
 
 Does your program have a user interface? 
-
 -   No (will be coming later)
 
 What inputs will your program have? 
-
 -   User will enter 1 of 3 options and will be given an error message if input is something outside of these options
 
 What is the desired output? 
-
 -   A "You win", "You lose" or "Tie game" depending on choices by user and computer 
 
 Given your inputs, what are the steps necessary to return the desired output? See plan below: 
