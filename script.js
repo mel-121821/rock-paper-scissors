@@ -59,39 +59,41 @@ function playRound() {
 // Collect input from user and convert to lowercase. Copy the computerPlay() function to the computerSelection parameter so we can pass it to the playRound function.
 
 
-let numberOfRounds = 0;
+// New step: comment out the logic that plays exactly 5 rounds:
 
-function game() {
+//let numberOfRounds = 0;
 
-    for (let i = 0; i < 5; i++) {
-        ++numberOfRounds;
+//function game() {
 
-        if (i < 5) {
+    //for (let i = 0; i < 5; i++) {
+        //++numberOfRounds;
+
+        //if (i < 5) {
             
-            getPlayerSelection();
-            console.log(playerSelection);
+            //getPlayerSelection();
+            //console.log(playerSelection);
             
-            console.log(computerPlay());
+            //console.log(computerPlay());
 
-            playRound(playerSelection, computerSelection);
+            //playRound(playerSelection, computerSelection);
 
-            console.log(`Wins = ${wins}`);
-            console.log(`Losses = ${losses}`); 
+            //console.log(`Wins = ${wins}`);
+            //console.log(`Losses = ${losses}`); 
 
         
-                if (numberOfRounds === 5 && wins > losses) {
-                    console.log("Congrats! You've won this round! :)");
-                } else if (numberOfRounds === 5 && losses > wins) {
-                    console.log("Sorry, you've lost this round :(");
-                } else if (numberOfRounds === 5 && losses === wins) {
-                    console.log("It's a tie!")
-                }  
+                //if (numberOfRounds === 5 && wins > losses) {
+                  //  console.log("Congrats! You've won this round! :)");
+                //} else if (numberOfRounds === 5 && losses > wins) {
+                  //  console.log("Sorry, you've lost this round :(");
+                //} else if (numberOfRounds === 5 && losses === wins) {
+                  //  console.log("It's a tie!")
+                //}  
 
-        } else {
-            console.log("Game over")
-        }
-    }
-}
+        //} else {
+            //console.log("Game over")
+        //}
+    //}
+//}
 
-game();
+//game();
 
