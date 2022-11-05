@@ -8,10 +8,34 @@ function computerPlay() {
     return computerSelection = options[Math.floor(Math.random()*options.length)];
 }
 
+// Add an event listener to the buttons that call your playRounc() function with the correct player selection every time the button is clicked
 
-function getPlayerSelection() {
-    return playerSelection = prompt("Choose an option");
-};
+const rockBtn = document.querySelector('#rock');
+const paperBtn = document.querySelector('#paper');
+const scissorsBtn = document.querySelector('#scissors');
+
+let playerSelection = ""
+
+rockBtn.addEventListener('click', () => {
+    playerSelection = "rock";
+    computerPlay();
+
+    playRound();
+});
+
+paperBtn.addEventListener('click', () => {
+    playerSelection = "paper";
+    computerPlay();
+
+    playRound();
+});
+
+scissorsBtn.addEventListener('click', () => {
+    playerSelection = "scissors";
+    computerPlay();
+
+    playRound();
+});
 
 
 let wins = 0
