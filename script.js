@@ -8,7 +8,7 @@ function computerPlay() {
     return computerSelection = options[Math.floor(Math.random()*options.length)];
 }
 
-// Add an event listener to the buttons that call your playRounc() function with the correct player selection every time the button is clicked
+// Add an event listener to the buttons that call your playRound() function with the correct player selection every time the button is clicked
 
 const rockBtn = document.querySelector('#rock');
 const paperBtn = document.querySelector('#paper');
@@ -18,21 +18,27 @@ let playerSelection = ""
 
 rockBtn.addEventListener('click', () => {
     playerSelection = "rock";
+    console.log(`You have selected: ${playerSelection}`);
     computerPlay();
+    console.log(`The computer picks: ${computerSelection}`);
 
     playRound();
 });
 
 paperBtn.addEventListener('click', () => {
     playerSelection = "paper";
+    console.log(`You have selected: ${playerSelection}`);
     computerPlay();
+    console.log(`The computer picks: ${computerSelection}`);
 
     playRound();
 });
 
 scissorsBtn.addEventListener('click', () => {
     playerSelection = "scissors";
+    console.log(`You have selected: ${playerSelection}`);
     computerPlay();
+    console.log(`The computer picks: ${computerSelection}`);
 
     playRound();
 });
