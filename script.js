@@ -18,6 +18,8 @@ const results = document.querySelector('.results > p');
 const win = document.querySelector('.wins > p');
 const lose = document.querySelector('.losses > p');
 
+const anyButton = document.querySelectorAll('button');
+
 let playerSelection = "";
 let roundResult = "";
 
@@ -80,44 +82,33 @@ function playRound() {
     }
 };
 
-// Collect input from user and convert to lowercase. Copy the computerPlay() function to the computerSelection parameter so we can pass it to the playRound function.
 
 
-// New step: comment out the logic that plays exactly 5 rounds:
+//New step: comment out the logic that plays exactly 5 rounds:
+//We want a function that counts up to 5 rounds. 1 round is counted each time a button (any button) is clicked. Once the 5 rounds are reached, state final score and fade out buttons
 
-//let numberOfRounds = 0;
+let numberOfRounds = 0;
 
-//function game() {
+function game() {
+    for (i of anyButton) {
+        i.addEventListener('click', () => {
+            ++numberOfRounds;
+            console.log(numberOfRounds);
+        })}
+        if (numberOfRounds < 5) {
+                 
+        } else {
+            if (numberOfRounds === 5 && wins > losses) {
+                console.log("Congrats! You've won this round! :)");
+            } else if (numberOfRounds === 5 && losses > wins) {
+                console.log("Sorry, you've lost this round :(");
+            } else if (numberOfRounds === 5 && losses === wins) {
+                console.log("It's a tie!")
+            } 
+            console.log("Game over")
+        }
+    }
 
-    //for (let i = 0; i < 5; i++) {
-        //++numberOfRounds;
 
-        //if (i < 5) {
-            
-            //getPlayerSelection();
-            //console.log(playerSelection);
-            
-            //console.log(computerPlay());
-
-            //playRound(playerSelection, computerSelection);
-
-            //console.log(`Wins = ${wins}`);
-            //console.log(`Losses = ${losses}`); 
-
-        
-                //if (numberOfRounds === 5 && wins > losses) {
-                  //  console.log("Congrats! You've won this round! :)");
-                //} else if (numberOfRounds === 5 && losses > wins) {
-                  //  console.log("Sorry, you've lost this round :(");
-                //} else if (numberOfRounds === 5 && losses === wins) {
-                  //  console.log("It's a tie!")
-                //}  
-
-        //} else {
-            //console.log("Game over")
-        //}
-    //}
-//}
-
-//game();
+game();
 
