@@ -21,8 +21,6 @@ let roundResult = "";
 
 function rpsPlay() {
     computerPlay();
-    console.log(`The computer picks: ${computerSelection}`);
-
     playRound();
     const resultStatement = document.createElement('p'); 
     resultStatement.textContent = `You picked ${playerSelection}, the computer picked ${computerSelection}.\n ${roundResult}`;
@@ -53,31 +51,24 @@ function playRound() {
 
     if (playerSelection.toLowerCase() === computerSelection) {
         roundResult = "Tie game!";
-        console.log("Tie game!");
     } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "paper") {
         ++losses;
         roundResult = "You lose! Paper beats rock.";
-        console.log("You lose! Paper beats rock.");
     } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") {
         ++wins;
         roundResult = "You win! Rock beats scissors.";
-        console.log("You win! Rock beats scissors.");
     } else if (playerSelection.toLowerCase() === "paper" && computerSelection === "rock") {
         ++wins;
         roundResult = "You win! Paper beats rock.";
-        console.log("You win! Paper beats rock.");
     } else if (playerSelection.toLowerCase() === "paper" && computerSelection === "scissors") {
         ++losses;
-        return "You lose! Scissors beats paper.";
-        console.log("You lose! Scissors beats paper.");
+        roundResult = "You lose! Scissors beats paper.";
     } else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper") {
         ++wins;
         roundResult = "You win! Scissors beats paper.";
-        console.log("You win! Scissors beats paper.");
     } else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "rock") {
         ++losses;
         roundResult = "You lose! Rock beats scissors.";
-        console.log("You lose! Rock beats scissors.");
     } else if (playerSelection.toLowerCase() !== "rock" || playerSelection.toLowerCase() !== "paper" || playerSelection.toLowerCase() !== "paper") {
         //return "Sorry, this is not a valid input. Please try again.";
         console.log("Sorry, this is not a valid input. Please try again.");
