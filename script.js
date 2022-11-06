@@ -14,7 +14,7 @@ const rockBtn = document.querySelector('#rock');
 const paperBtn = document.querySelector('#paper');
 const scissorsBtn = document.querySelector('#scissors');
 
-const results = document.querySelector('.results');
+const results = document.querySelector('.results > p');
 
 let playerSelection = "";
 let roundResult = "";
@@ -22,9 +22,7 @@ let roundResult = "";
 function rpsPlay() {
     computerPlay();
     playRound();
-    const resultStatement = document.createElement('p'); 
-    resultStatement.textContent = `You picked ${playerSelection}, the computer picked ${computerSelection}.\n${roundResult}`;
-    results.appendChild(resultStatement);
+    results.textContent = `You picked ${playerSelection}, the computer picked ${computerSelection}.\n${roundResult}`;
 }
 
 rockBtn.addEventListener('click', () => {
