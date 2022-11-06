@@ -14,20 +14,27 @@ const rockBtn = document.querySelector('#rock');
 const paperBtn = document.querySelector('#paper');
 const scissorsBtn = document.querySelector('#scissors');
 
-let playerSelection = ""
+const results = document.querySelector('.results');
+
+let playerSelection = "";
+let roundResult = "";
 
 rockBtn.addEventListener('click', () => {
     playerSelection = "rock";
-    console.log(`You have selected: ${playerSelection}`);
+    
     computerPlay();
     console.log(`The computer picks: ${computerSelection}`);
 
     playRound();
+    const resultStatement = document.createElement('p'); 
+    resultStatement.textContent = `You picked ${playerSelection}, the computer picked ${computerSelection}.\n ${roundResult}`;
+    results.appendChild(resultStatement);
+
 });
 
 paperBtn.addEventListener('click', () => {
     playerSelection = "paper";
-    console.log(`You have selected: ${playerSelection}`);
+    console.log(`You picked: ${playerSelection}`);
     computerPlay();
     console.log(`The computer picks: ${computerSelection}`);
 
@@ -36,7 +43,7 @@ paperBtn.addEventListener('click', () => {
 
 scissorsBtn.addEventListener('click', () => {
     playerSelection = "scissors";
-    console.log(`You have selected: ${playerSelection}`);
+    console.log(`You picked: ${playerSelection}`);
     computerPlay();
     console.log(`The computer picks: ${computerSelection}`);
 
@@ -51,31 +58,31 @@ function playRound() {
 
 
     if (playerSelection.toLowerCase() === computerSelection) {
-        //return "Tie game!";
+        roundResult = "Tie game!";
         console.log("Tie game!");
     } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "paper") {
         ++losses;
-        //return "You lose! Paper beats rock.";
+        roundResult = "You lose! Paper beats rock.";
         console.log("You lose! Paper beats rock.");
     } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") {
         ++wins;
-        //return "You win! Rock beats scissors.";
+        roundResult = "You win! Rock beats scissors.";
         console.log("You win! Rock beats scissors.");
     } else if (playerSelection.toLowerCase() === "paper" && computerSelection === "rock") {
         ++wins;
-        //return "You win! Paper beats rock.";
+        roundResult = "You win! Paper beats rock.";
         console.log("You win! Paper beats rock.");
     } else if (playerSelection.toLowerCase() === "paper" && computerSelection === "scissors") {
         ++losses;
-        //return "You lose! Scissors beats paper.";
+        return "You lose! Scissors beats paper.";
         console.log("You lose! Scissors beats paper.");
     } else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper") {
         ++wins;
-        //return "You win! Scissors beats paper.";
+        roundResult = "You win! Scissors beats paper.";
         console.log("You win! Scissors beats paper.");
     } else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "rock") {
         ++losses;
-        //return "You lose! Rock beats scissors.";
+        roundResult = "You lose! Rock beats scissors.";
         console.log("You lose! Rock beats scissors.");
     } else if (playerSelection.toLowerCase() !== "rock" || playerSelection.toLowerCase() !== "paper" || playerSelection.toLowerCase() !== "paper") {
         //return "Sorry, this is not a valid input. Please try again.";
