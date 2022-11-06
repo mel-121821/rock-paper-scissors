@@ -23,7 +23,7 @@ function rpsPlay() {
     computerPlay();
     playRound();
     const resultStatement = document.createElement('p'); 
-    resultStatement.textContent = `You picked ${playerSelection}, the computer picked ${computerSelection}.\n ${roundResult}`;
+    resultStatement.textContent = `You picked ${playerSelection}, the computer picked ${computerSelection}.\n${roundResult}`;
     results.appendChild(resultStatement);
 }
 
