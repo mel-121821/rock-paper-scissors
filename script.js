@@ -19,9 +19,7 @@ const results = document.querySelector('.results');
 let playerSelection = "";
 let roundResult = "";
 
-rockBtn.addEventListener('click', () => {
-    playerSelection = "rock";
-    
+function rpsPlay() {
     computerPlay();
     console.log(`The computer picks: ${computerSelection}`);
 
@@ -29,25 +27,21 @@ rockBtn.addEventListener('click', () => {
     const resultStatement = document.createElement('p'); 
     resultStatement.textContent = `You picked ${playerSelection}, the computer picked ${computerSelection}.\n ${roundResult}`;
     results.appendChild(resultStatement);
+}
 
+rockBtn.addEventListener('click', () => {
+    playerSelection = "rock";
+    rpsPlay();
 });
 
 paperBtn.addEventListener('click', () => {
     playerSelection = "paper";
-    console.log(`You picked: ${playerSelection}`);
-    computerPlay();
-    console.log(`The computer picks: ${computerSelection}`);
-
-    playRound();
+    rpsPlay();
 });
 
 scissorsBtn.addEventListener('click', () => {
     playerSelection = "scissors";
-    console.log(`You picked: ${playerSelection}`);
-    computerPlay();
-    console.log(`The computer picks: ${computerSelection}`);
-
-    playRound();
+    rpsPlay();
 });
 
 
