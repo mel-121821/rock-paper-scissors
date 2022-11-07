@@ -17,6 +17,7 @@ const scissorsBtn = document.querySelector('#scissors');
 const results = document.querySelector('.results > p');
 const win = document.querySelector('.wins > p');
 const lose = document.querySelector('.losses > p');
+const tie = document.querySelector('.ties > p');
 
 const anyButton = document.querySelectorAll('button');
 
@@ -25,23 +26,23 @@ let numberOfRounds = 0;
 let playerSelection = "";
 let roundResult = "";
 
-
-for (i of anyButton) {
-    i.addEventListener('click', () => {
-        ++numberOfRounds;
-        console.log(numberOfRounds);
-    })
-}
-
 function rpsPlay() {
     computerPlay();
     playRound();
     results.textContent = `You picked ${playerSelection}, the computer picked ${computerSelection}.\n${roundResult}`;
     win.textContent = `${wins}`;
     lose.textContent = `${losses}`;
+    tie.textContent = `${ties}`;
 }
 
-function endGame(numberOfRounds) {
+//for (i of anyButton) 
+        //i.addEventListener('click', () => {
+            //++numberOfRounds;
+            //console.log(numberOfRounds);
+        //})
+
+function checkNumberOfRounds(numberOfRounds) {
+    console.log(numberOfRounds);
     if (numberOfRounds < 4){
         console.log("Next selection")
     } else {
@@ -52,8 +53,10 @@ function endGame(numberOfRounds) {
 
 rockBtn.addEventListener('click', () => {
     playerSelection = "rock";
+    ++numberOfRounds;
+    console.log(numberOfRounds);
     rpsPlay();
-    endGame();
+    checkNumberOfRounds();
 });
 
 paperBtn.addEventListener('click', () => {
@@ -69,11 +72,13 @@ scissorsBtn.addEventListener('click', () => {
 
 let wins = 0
 let losses = 0
+let ties = 0
 
 function playRound() {
 
 
     if (playerSelection.toLowerCase() === computerSelection) {
+        ++ties;
         roundResult = "Tie game!";
     } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "paper") {
         ++losses;
@@ -110,21 +115,20 @@ function playRound() {
 
 
 
-function game() {
+//function game() {
     
-        if (numberOfRounds === 4) {
-            anyButton.disabled = true;
-            if (numberOfRounds === 5 && wins > losses) {
-                console.log("Congrats! You've won this round! :)");
-            } else if (numberOfRounds === 5 && losses > wins) {
-                console.log("Sorry, you've lost this round :(");
-            } else if (numberOfRounds === 5 && losses === wins) {
-                console.log("It's a tie!")
-            } 
-            console.log("Game over")
-        } else {
+        //if (numberOfRounds === 4) {
+            //anyButton.disabled = true;
+            //if (numberOfRounds === 5 && wins > losses) {
+                //console.log("Congrats! You've won this round! :)");
+            //} else if (numberOfRounds === 5 && losses > wins) {
+                //console.log("Sorry, you've lost this round :(");
+            //} else if (numberOfRounds === 5 && losses === wins) {
+                //console.log("It's a tie!")
+            //} 
+            //console.log("Game over")
+        //} else {
             
-        }
-    }
+        //}
+    //}
 
-game();
