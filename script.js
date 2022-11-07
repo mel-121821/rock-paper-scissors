@@ -20,8 +20,18 @@ const lose = document.querySelector('.losses > p');
 
 const anyButton = document.querySelectorAll('button');
 
+
+let numberOfRounds = 0;
 let playerSelection = "";
 let roundResult = "";
+
+
+for (i of anyButton) {
+    i.addEventListener('click', () => {
+        ++numberOfRounds;
+        console.log(numberOfRounds);
+    })
+}
 
 function rpsPlay() {
     computerPlay();
@@ -31,9 +41,19 @@ function rpsPlay() {
     lose.textContent = `${losses}`;
 }
 
+function endGame(numberOfRounds) {
+    if (numberOfRounds < 4){
+        console.log("Next selection")
+    } else {
+        anyButton.disabled = true;
+        console.log("Game Finished")
+    }
+}
+
 rockBtn.addEventListener('click', () => {
     playerSelection = "rock";
     rpsPlay();
+    endGame();
 });
 
 paperBtn.addEventListener('click', () => {
@@ -85,19 +105,15 @@ function playRound() {
 
 
 //New step: comment out the logic that plays exactly 5 rounds:
+
 //We want a function that counts up to 5 rounds. 1 round is counted each time a button (any button) is clicked. Once the 5 rounds are reached, state final score and fade out buttons
 
-let numberOfRounds = 0;
+
 
 function game() {
-    for (i of anyButton) {
-        i.addEventListener('click', () => {
-            ++numberOfRounds;
-            console.log(numberOfRounds);
-        })}
-        if (numberOfRounds < 5) {
-                 
-        } else {
+    
+        if (numberOfRounds === 4) {
+            anyButton.disabled = true;
             if (numberOfRounds === 5 && wins > losses) {
                 console.log("Congrats! You've won this round! :)");
             } else if (numberOfRounds === 5 && losses > wins) {
@@ -106,9 +122,9 @@ function game() {
                 console.log("It's a tie!")
             } 
             console.log("Game over")
+        } else {
+            
         }
     }
 
-
 game();
-
