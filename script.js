@@ -89,34 +89,28 @@ let ties = 0
 function playRound() {
 
 
-    if (playerSelection.toLowerCase() === computerSelection) {
+    if (playerSelection === computerSelection) {
         ++ties;
         roundResult = "Tie game!";
-    } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "paper") {
+    } else if (playerSelection === "rock" && computerSelection === "paper") {
         ++losses;
         roundResult = "You lose! Paper beats rock.";
-    } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") {
+    } else if (playerSelection === "rock" && computerSelection === "scissors") {
         ++wins;
         roundResult = "You win! Rock beats scissors.";
-    } else if (playerSelection.toLowerCase() === "paper" && computerSelection === "rock") {
+    } else if (playerSelection === "paper" && computerSelection === "rock") {
         ++wins;
         roundResult = "You win! Paper beats rock.";
-    } else if (playerSelection.toLowerCase() === "paper" && computerSelection === "scissors") {
+    } else if (playerSelection === "paper" && computerSelection === "scissors") {
         ++losses;
         roundResult = "You lose! Scissors beats paper.";
-    } else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper") {
+    } else if (playerSelection === "scissors" && computerSelection === "paper") {
         ++wins;
         roundResult = "You win! Scissors beats paper.";
-    } else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "rock") {
+    } else if (playerSelection === "scissors" && computerSelection === "rock") {
         ++losses;
         roundResult = "You lose! Rock beats scissors.";
-    } else if (playerSelection.toLowerCase() !== "rock" || playerSelection.toLowerCase() !== "paper" || playerSelection.toLowerCase() !== "paper") {
-        //return "Sorry, this is not a valid input. Please try again.";
-        console.log("Sorry, this is not a valid input. Please try again.");
-    } else {
-        //return "What happened?"
-        console.log("What happened?");
-    }
+    } 
 };
 
 
@@ -126,21 +120,4 @@ function playRound() {
 //We want a function that counts up to 5 rounds. 1 round is counted each time a button (any button) is clicked. Once the 5 rounds are reached, state final score and fade out buttons
 
 
-
-//function game() {
-    
-        //if (numberOfRounds === 4) {
-            //anyButton.disabled = true;
-            //if (numberOfRounds === 5 && wins > losses) {
-                //console.log("Congrats! You've won this round! :)");
-            //} else if (numberOfRounds === 5 && losses > wins) {
-                //console.log("Sorry, you've lost this round :(");
-            //} else if (numberOfRounds === 5 && losses === wins) {
-                //console.log("It's a tie!")
-            //} 
-            //console.log("Game over")
-        //} else {
-            
-        //}
-    //}
 
