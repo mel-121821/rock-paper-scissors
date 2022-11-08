@@ -19,6 +19,9 @@ const win = document.querySelector('.wins > p');
 const lose = document.querySelector('.losses > p');
 const tie = document.querySelector('.ties > p');
 
+const anyButton = document.querySelectorAll('button');
+
+const finalResult = document.querySelector('.finalResult > p');
 
 
 
@@ -35,27 +38,29 @@ function rpsPlay() {
     tie.textContent = `${ties}`;
 }
 
-//for (i of anyButton) 
-        //i.addEventListener('click', () => {
-            //++numberOfRounds;
-            //console.log(numberOfRounds);
-        //})
-
 function checkNumberOfRounds(numberOfRounds) {
-    console.log(numberOfRounds);
     if (numberOfRounds < 5){
-        console.log("Next selection")
+        //console.log("Next selection")
     } else {
         disableButtons();
-        console.log("Game Finished")
+        printFinalResult();
     }
 }
 
-function disableButtons () {
-    const anyButton = document.querySelectorAll('button');
+function disableButtons() {
     for (button of anyButton) {
         button.disabled = "true";
     }
+}
+
+function printFinalResult() {
+    if (wins > losses) {
+        finalResult.textContent = "Congrats! You've won this round! :)";
+    } else if (losses > wins) {
+        finalResult.textContent = "Sorry, you've lost this round :(";
+    } else if (losses === wins) {
+        finalResult.textContent = "It's a tie!";
+    } 
 }
 
 rockBtn.addEventListener('click', () => {
