@@ -39,12 +39,11 @@ function rpsPlay() {
 }
 
 function checkNumberOfRounds(numberOfRounds) {
-    if (numberOfRounds < 5){
-        //console.log("Next selection")
-    } else {
+    if (wins === 5 || losses === 5){
         disableButtons();
         printFinalResult();
-    }
+    } else {
+    }    
 }
 
 function disableButtons() {
@@ -58,8 +57,6 @@ function printFinalResult() {
         finalResult.textContent = "Congrats! You've won this round! :)";
     } else if (losses > wins) {
         finalResult.textContent = "Sorry, you've lost this round :(";
-    } else if (losses === wins) {
-        finalResult.textContent = "It's a tie!";
     } 
 }
 
