@@ -19,7 +19,7 @@ const win = document.querySelector('.wins > p');
 const lose = document.querySelector('.losses > p');
 const tie = document.querySelector('.ties > p');
 
-const anyButton = document.querySelectorAll('button');
+
 
 
 let numberOfRounds = 0;
@@ -43,30 +43,40 @@ function rpsPlay() {
 
 function checkNumberOfRounds(numberOfRounds) {
     console.log(numberOfRounds);
-    if (numberOfRounds < 4){
+    if (numberOfRounds < 5){
         console.log("Next selection")
     } else {
-        anyButton.disabled = true;
+        disableButtons();
         console.log("Game Finished")
+    }
+}
+
+function disableButtons () {
+    const anyButton = document.querySelectorAll('button');
+    for (button of anyButton) {
+        button.disabled = "true";
     }
 }
 
 rockBtn.addEventListener('click', () => {
     playerSelection = "rock";
     ++numberOfRounds;
-    console.log(numberOfRounds);
     rpsPlay();
-    checkNumberOfRounds();
+    checkNumberOfRounds(numberOfRounds);
 });
 
 paperBtn.addEventListener('click', () => {
     playerSelection = "paper";
+    ++numberOfRounds;
     rpsPlay();
+    checkNumberOfRounds(numberOfRounds);
 });
 
 scissorsBtn.addEventListener('click', () => {
     playerSelection = "scissors";
+    ++numberOfRounds;
     rpsPlay();
+    checkNumberOfRounds(numberOfRounds);
 });
 
 
