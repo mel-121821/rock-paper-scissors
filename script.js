@@ -14,7 +14,10 @@ const rockBtn = document.querySelector('#rock');
 const paperBtn = document.querySelector('#paper');
 const scissorsBtn = document.querySelector('#scissors');
 
-const results = document.querySelector('.results > p');
+const playerPick = document.querySelector('.player-pick > p');
+const computerPick = document.querySelector('.computer-pick > p');
+const resultStatement = document.querySelector('.result-statement > p');
+
 const win = document.querySelector('.wins > p');
 const lose = document.querySelector('.losses > p');
 const tie = document.querySelector('.ties > p');
@@ -32,7 +35,9 @@ let roundResult = "";
 function rpsPlay() {
     computerPlay();
     playRound();
-    results.textContent = `You picked ${playerSelection}, the computer picked ${computerSelection}.\n${roundResult}`;
+    playerPick.textContent = `You picked ${playerSelection}.`;
+    computerPick.textContent = `The computer picked ${computerSelection}.`;
+    resultStatement.textContent = `${roundResult}`;
     win.textContent = `${wins}`;
     lose.textContent = `${losses}`;
     tie.textContent = `${ties}`;
