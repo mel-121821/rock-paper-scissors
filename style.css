@@ -1,9 +1,33 @@
+@font-face {
+    font-family: 'arcadeclassicregular';
+    src: url('fonts/arcadeclassic-webfont.woff2') format('woff2'),
+         url('fonts/arcadeclassic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
-    font-family: roboto, sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 500;
+    background-color: black;
+    color:rgb(0, 255, 64);
     font-size: 16px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-family: 'arcadeclassicregular', sans-serif;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    border: 8px rgb(0, 255, 64);
+    border-style: groove;
+    border-radius: 20px;
+    max-width: 500px;
+    padding: 0 50px;
 }
 
 p {
