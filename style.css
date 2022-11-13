@@ -48,7 +48,7 @@ body {
 
 .buttons {
     display: flex;
-    max-width: 500px;
+    width: 550px;
     justify-content: space-evenly;
     gap: 50px;
     margin-bottom: 50px;
@@ -91,7 +91,8 @@ img {
 .result-statement p {
     display: flex;
     font-size: 26px;
-    margin-top: 30px;
+    margin-top: 50px;
+    margin-bottom: 60px;
 }
 
 .round-result {
@@ -129,6 +130,27 @@ img {
 #rock, #paper, #scissors {
     padding: 10px;
 
+}
+
+.win-loss-counter {
+    width: 400px;
+}
+
+table {
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid;
+    border-collapse: collapse;  
+    font-size: 20px;  
+}
+
+.wins, 
+.losses,
+.ties {
+    display: flex;
+    justify-content: center;
 }
 
 /*color:rgb(0, 255, 64);
