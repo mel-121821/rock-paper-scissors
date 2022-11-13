@@ -11,7 +11,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     background-color: black;
-    color:rgb(0, 255, 64);
+    color:rgb(37, 186, 255);
     font-size: 16px;
     display: flex;
     flex-direction: column;
@@ -20,21 +20,20 @@ body {
 
 .title {
     font-family: 'arcadeclassicregular', sans-serif;
-    font-size: 25px;
+    font-size: 28px;
     display: flex;
     justify-content: center;
-    border: 8px rgb(0, 255, 64);
+    border: 8px rgb(37, 186, 255);
     border-style: groove;
     border-radius: 20px;
-    max-width: 500px;
-    padding: 0 60px;
-    margin: 60px 0px;
+    padding: 0 80px;
+    margin: 30px 0px;
 }
 
 .opener {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     font-size: 20px;
-    color: rgb(41, 41, 255);
+    color: rgb(37, 186, 255);
 }
 
 .opener-para1 {
@@ -47,18 +46,55 @@ body {
     margin-top: -30px;
 }
 
-img {
-    max-width: 420px;
-    border: 1px solid black;
-    border-radius: 15px;
+.buttons {
+    display: flex;
+    max-width: 500px;
+    justify-content: space-evenly;
+    gap: 50px;
+    margin-bottom: 50px;
 }
+
+button {
+    background: black;
+    border: none;
+}
+
+button:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: 1s ease;
+}
+
+img {
+    max-width: 120px;
+    border-radius: 20px;
+    border-style: groove;   
+}
+
+.rock-icon {
+    border: 2px solid rgb(241, 149, 206);
+}
+
+.paper-icon {
+    border: 2px solid rgb(43, 167, 250);
+}
+
+.scissors-icon {
+    border: 2px solid rgb(255, 208, 0);
+}
+
+
 
 .round-result p {
     font-size: 16px;
-    color: black;
+    color: rgb(43, 167, 250);
 }
 
 .buttons
 #rock, #paper, #scissors {
     padding: 10px;
+
 }
+
+/*color:rgb(0, 255, 64);
