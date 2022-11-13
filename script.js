@@ -112,12 +112,12 @@ let wins = 0
 let losses = 0
 let ties = 0
 
+
 function playRound() {
-
-
     if (playerSelection === computerSelection) {
         ++ties;
         roundResult = "Tie game!";
+        resultStatement.style.color = 'rgb(43, 167, 250)';
     } else if (playerSelection === "rock" && computerSelection === "paper") {
         ++losses;
         roundResult = "You lose! Paper beats rock.";
