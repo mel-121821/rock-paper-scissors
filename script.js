@@ -121,21 +121,27 @@ function playRound() {
     } else if (playerSelection === "rock" && computerSelection === "paper") {
         ++losses;
         roundResult = "You lose! Paper beats rock.";
+        resultStatement.style.color = 'rgb(255, 106, 37)';
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
         ++wins;
         roundResult = "You win! Rock beats scissors.";
+        resultStatement.style.color = 'rgb(37, 255, 171)';
     } else if (playerSelection === "paper" && computerSelection === "rock") {
         ++wins;
         roundResult = "You win! Paper beats rock.";
+        resultStatement.style.color = 'rgb(37, 255, 171)';
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
         ++losses;
         roundResult = "You lose! Scissors beats paper.";
+        resultStatement.style.color = 'rgb(255, 106, 37)';
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
         ++wins;
         roundResult = "You win! Scissors beats paper.";
+        resultStatement.style.color = 'rgb(37, 255, 171)';
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
         ++losses;
         roundResult = "You lose! Rock beats scissors.";
+        resultStatement.style.color = 'rgb(255, 106, 37)';
     } 
 };
 
