@@ -29,3 +29,6 @@ Create a counter that counts the number of rounds up to 5 and then ends the game
 Image credits:
 
 construction.jpg: JESHOOTS.com
+
+Rock, paper and scissors icons by nightwolfdezines on Vecteezy: 
+https://www.vecteezy.com/free-vector/rock-paper-scissors
