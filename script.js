@@ -74,9 +74,9 @@ function disableButtons() {
 
 function printFinalResult() {
     if (wins > losses) {
-        finalResult.textContent = "Congrats! You've won this round! :)";
+        resultStatement.textContent = "Congrats! You've won this round! :)";
     } else if (losses > wins) {
-        finalResult.textContent = "Sorry, you've lost this round :(";
+        resultStatement.textContent = "Sorry, you've lost this round :(";
     } 
 }
 
