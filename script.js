@@ -15,9 +15,9 @@ const paperBtn = document.querySelector('#paper');
 const scissorsBtn = document.querySelector('#scissors');
 
 const playerPick = document.querySelector('.player-pick > p');
-const playerPickDiv = document.querySelector('.player-pick');
+//const playerPickDiv = document.querySelector('.player-pick');
 const computerPick = document.querySelector('.computer-pick > p');
-const computerPickDiv = document.querySelector('.computer-pick');
+//const computerPickDiv = document.querySelector('.computer-pick');
 const resultStatement = document.querySelector('.result-statement > p');
 
 const win = document.querySelector('.wins > p');
@@ -30,13 +30,13 @@ const finalResult = document.querySelector('.finalResult > p');
 
 function assignCompColor(computerSelection) {
     if (computerSelection === "rock") {
-        computerPickDiv.style.color = 'rgb(241, 149, 206)';
+        //computerPickDiv.style.color = 'rgb(241, 149, 206)';
         computerPick.style.color = 'rgb(241, 149, 206)';
     } else if (computerSelection === "paper") {
-        computerPickDiv.style.color = 'rgb(43, 167, 250)';
+        //computerPickDiv.style.color = 'rgb(43, 167, 250)';
         computerPick.style.color = 'rgb(43, 167, 250)';
     } else {
-        computerPickDiv.style.color = 'rgb(255, 208, 0)';
+        //computerPickDiv.style.color = 'rgb(255, 208, 0)';
         computerPick.style.color = 'rgb(255, 208, 0)';
     }
 }
@@ -67,7 +67,7 @@ function checkNumberOfRounds(numberOfRounds) {
 }
 
 function disableButtons() {
-    for (button of anyButton) {
+    for (button of anyButton) {c
         button.disabled = "true";
     }
 }
@@ -82,7 +82,7 @@ function printFinalResult() {
 
 rockBtn.addEventListener('click', () => {
     playerSelection = "rock";
-    playerPickDiv.style.color = 'rgb(241, 149, 206)';
+    //playerPickDiv.style.color = 'rgb(241, 149, 206)';
     playerPick.style.color = 'rgb(241, 149, 206)';
     ++numberOfRounds;
     rpsPlay();
@@ -91,7 +91,7 @@ rockBtn.addEventListener('click', () => {
 
 paperBtn.addEventListener('click', () => {
     playerSelection = "paper";
-    playerPickDiv.style.color = 'rgb(43, 167, 250)';
+    //playerPickDiv.style.color = 'rgb(43, 167, 250)';
     playerPick.style.color = 'rgb(43, 167, 250)';
     ++numberOfRounds;
     rpsPlay();
@@ -100,7 +100,7 @@ paperBtn.addEventListener('click', () => {
 
 scissorsBtn.addEventListener('click', () => {
     playerSelection = "scissors";
-    playerPickDiv.style.color = 'rgb(255, 208, 0';
+    //playerPickDiv.style.color = 'rgb(255, 208, 0';
     playerPick.style.color = 'rgb(255, 208, 0';
     ++numberOfRounds;
     rpsPlay();
