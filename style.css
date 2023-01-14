@@ -62,7 +62,7 @@ body {
     width: 550px;
     justify-content: space-evenly;
     gap: 70px;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
 }
 
 button {
@@ -85,17 +85,17 @@ img {
 
 .rock-icon {
     border: 2px solid rgb(241, 149, 206);
-    max-width: 110px;
+    max-width: 90px;
 }
 
 .paper-icon {
     border: 2px solid rgb(43, 167, 250);
-    max-width: 110px;
+    max-width: 90px;
 }
 
 .scissors-icon {
     border: 2px solid rgb(255, 208, 0);
-    max-width: 110px;
+    max-width: 90px;
 }
 
 .result-statment {
@@ -158,7 +158,7 @@ table {
 table, th, td {
     border: 1px solid;
     border-collapse: collapse;  
-    font-size: 18px;  
+    font-size: 16px;  
 }
 
 .wins, 
