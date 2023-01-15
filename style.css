@@ -77,6 +77,10 @@ button:hover {
     transition: 1s ease;
 }
 
+.cancelHoverEffects {
+    pointer-events: none;
+}
+
 img {
     max-width: 120px;
     border-radius: 20px;
