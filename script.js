@@ -64,6 +64,7 @@ function checkNumberOfRounds(numberOfRounds) {
 function disableButtons() {
     for (button of anyButton) {
         button.disabled = "true";
+        button.classList.add("cancelHoverEffects");
     }
 }
 
